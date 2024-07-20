@@ -61,7 +61,7 @@ function Chats(props) {
     }
     const chats = Array(20).fill(chat)
     const [value, setValue] = useState(0);
-    const tabs = ['All', 'Equities', 'Insider Trades']
+    const tabs = ['All', 'Equities', 'Insider Trades', 'All', 'Equities', 'Insider Trades', 'All', 'Equities', 'Insider Trades']
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -86,11 +86,12 @@ function Chats(props) {
 
     return (
         <Grid style={{ height: 'calc(100% - 3.5rem)', display: 'flex', flexDirection: 'column', width: '100%' }} >
+            <Grid style={{width: '100%', overflowX: 'auto'}}>
             <Tabs
                 value={value}
                 onChange={handleChange}
                 // indicatorColor="secondary"
-                variant="scrollable"
+                // variant="scrollable"
                 scrollButtons="auto"
                 // textColor="secondary"
                 aria-label="secondary tabs example"
@@ -108,6 +109,7 @@ function Chats(props) {
                     ))
                 }
             </Tabs>
+            </Grid>
 
             <Grid style={{ width: '100%', height: 'inherit', display: 'flex', flexDirection: 'column' }}>
                 <Grid style={{ overflowY: 'auto', padding: '5px' }} ref={gridRef} onScroll={(event) => handleScroll(event)}>

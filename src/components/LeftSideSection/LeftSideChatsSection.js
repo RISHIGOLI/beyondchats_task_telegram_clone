@@ -31,13 +31,18 @@ function LeftSideChatsSection() {
     const classes = useStyles()
     const [chats, setChats] = useState([])
     const [showAddNew, setShowAddNew] = useState(false)
+    const [isEdit, setIsEdit] = useState(true)
+
+    function handleClick() {
+        setIsEdit(!isEdit);
+    }
 
     return (
-        <Grid className={classes.leftSideChatsSectionContainer} onMouseEnter={() => setShowAddNew(true)} onMouseLeave={() => setShowAddNew(false)}>
+        <Grid className={classes.leftSideChatsSectionContainer} onMouseEnter={() => setShowAddNew(true)} onMouseLeave={() => { setShowAddNew(false); setIsEdit(true) }}>
             <Header />
             <Chats />
             <Grid className={`${classes.addNewContainer} ${showAddNew ? classes.addNewContainerVisible : ''}`}>
-                <AddNew />
+                <AddNew isEdit={isEdit} handleClick={handleClick} />
             </Grid>
         </Grid>
     )

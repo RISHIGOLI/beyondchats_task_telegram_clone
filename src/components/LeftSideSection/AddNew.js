@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import { MdEdit } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
@@ -39,13 +39,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function AddNew() {
-    const classes = useStyles();
-    const [isEdit, setIsEdit] = useState(true);
-
-    function handleClick() {
-        setIsEdit(!isEdit);
-    }
+function AddNew({ isEdit, handleClick }) {
+    const classes = useStyles()
 
     return (
         <Button className={classes.button} onClick={handleClick}>

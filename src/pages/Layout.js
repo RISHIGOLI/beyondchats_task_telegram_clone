@@ -21,7 +21,11 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '35rem', /* Maximum width */
         resize: 'horizontal',
         overflow: 'auto',
-        position: 'relative'
+        position: 'relative',
+        [theme.breakpoints.down(767)]:{
+            width: '100vw',
+            overflow: 'hidden'
+        }
     },
     resizer: {
         width: '5px',
@@ -37,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
         flex: 1, /* Flex-grow to take the remaining space */
         backgroundColor: '#f5f5f5',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        [theme.breakpoints.down(767)]:{
+            display: 'none',
+        }
     }
 }))
 

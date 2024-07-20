@@ -19,11 +19,20 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
         opacity: 0,
         transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
+        [theme.breakpoints.down(767)]: {
+            display: 'block',
+            opacity: 1,
+            position: 'absolute',
+            right: '1rem',
+            bottom: '4rem'
+        }
     },
     addNewContainerVisible: {
-        transform: 'translateY(0)',
-        opacity: 1,
-        display: 'block'
+        [theme.breakpoints.up(767)]: {
+            transform: 'translateY(0)',
+            opacity: 1,
+            display: 'block'
+        }
     }
 }))
 

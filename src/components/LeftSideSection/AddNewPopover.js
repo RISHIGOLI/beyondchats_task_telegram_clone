@@ -24,7 +24,12 @@ const useStyles = makeStyles((theme) => ({
         backdropFilter: 'blur(10px)',
         minWidth: '13.5rem !important',
         maxHeight: 'calc(100 * 6.41px - 3.75rem)',
-        padding: '0.25rem 0'
+        padding: '0.25rem 0',
+        [theme.breakpoints.up(767)]:{
+            right: 'unset !important',
+            left: '8.5rem !important',
+            bottom: '-2rem !important'
+        }
     },
     popoverItem: {
         fontSize: '.875rem',
